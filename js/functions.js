@@ -101,5 +101,5 @@ console.log("Your tip amount is: $" + theTip);
 function applyDiscount(discount, price){
     return price - (discount * price);
 }
-console.log(applyDiscount(0.20, 20));
-console.log(applyDiscount(0.50, 100));
+console.log("The discounted price is: $"+applyDiscount(0.20, 20));
+console.log("The discounted price is: $"+applyDiscount(0.50, 100));
