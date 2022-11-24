@@ -21,21 +21,21 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-// function analyzeColor(colorName){
-//     if(colorName == "blue")
-//         console.log("the color of the sky is blue");
-//     else if(colorName == "red")
-//         console.log("apples are red.");
-//     else if(colorName == "white")
-//         console.log("I have a white dog");
-//     else if(colorName == "orange")
-//         console.log("Oranges are orange.");
-//     else if(colorName == "cyan")
-//         console.log("I don't know anything about Cyan.");
-//     else
-//         console.log("No color was entered");
-// }
-// analyzeColor("red");
+function analyzeColor(colorName){
+    if(colorName == "blue")
+        console.log("the color of the sky is blue");
+    else if(colorName == "red")
+        console.log("apples are red.");
+    else if(colorName == "white")
+        console.log("I have a white dog");
+    else if(colorName == "orange")
+        console.log("Oranges are orange.");
+    else if(colorName == "cyan")
+        console.log("I don't know anything about Cyan.");
+    else
+        console.log("No color was entered");
+}
+analyzeColor("red");
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -56,7 +56,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-let colorInput = prompt("Enter a color name.");
+
 function analyzeColorSwitch(colorName){
     switch (colorName.toLowerCase()){
         case "red":
@@ -76,15 +76,17 @@ function analyzeColorSwitch(colorName){
             break;
     }
 }
-analyzeColorSwitch(colorInput);
+analyzeColorSwitch(randomColor);
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
- 
- function analyzeColorSwitch(colorName){
+
+ let colorInput = prompt("Enter a color name.");
+ function analyzeColorSwitchAlert(colorName){
      switch (colorName.toLowerCase()){
          case "red":
              alert("The apples are red.");
@@ -103,7 +105,7 @@ analyzeColorSwitch(colorInput);
              break;
      }
  }
- analyzeColorSwitch(colorInput);
+ analyzeColorSwitchAlert(colorInput);
 
 /* ########################################################################## */
 
@@ -127,6 +129,35 @@ analyzeColorSwitch(colorInput);
  * return value.
  */
 
+function calculateTotal(luckyNum, total){
+    switch(luckyNum){
+        case 0:
+            console.log(total * 1);
+            break;
+        case 1:
+            console.log(total - (total * 0.10));
+            break;
+        case 2:
+            console.log(total - (total * 0.25));
+            break;
+        case 3:
+            console.log(total - (total * 0.35));
+            break;
+        case 4:
+            console.log(total - (total * 0.50));
+            break;
+        case 5:
+            console.log(total - total);
+            break;
+        default:
+            console.log("No promotions this time.");
+            break;
+    }
+}
+calculateTotal(0, 100) // returns 100
+calculateTotal(4, 100) // returns 50
+calculateTotal(5, 100) //returns 0
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -136,7 +167,38 @@ analyzeColorSwitch(colorInput);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+
+var luckyNumber = Math.floor(Math.random() * 6);
+
+let userTotal = prompt("Enter your total cost.")
+let userTotalInt = parseInt(userTotal);
+
+function calculateTotalRandom (luckyNum, total){
+    switch(luckyNum){
+        case 0:
+            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + total);
+            break;
+        case 1:
+            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.10)));
+            break;
+        case 2:
+            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.25)));
+            break;
+        case 3:
+            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.35)));
+            break;
+        case 4:
+            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.50)));
+            break;
+        case 5:
+            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - total));
+            break;
+        default:
+            alert("No promotions at this time.");
+            break;
+    }
+}
+calculateTotalRandom(luckyNumber, userTotalInt);
 
 /**
  * TODO:
@@ -156,3 +218,31 @@ analyzeColorSwitch(colorInput);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+let question = confirm("Do you want to enter a number?");
+if(question == true){
+   let userInput =  prompt("Enter your favorite number.");
+   let userInputInt = parseFloat(userInput);
+
+   if(isNaN(userInput) == true){
+        alert("Incorrect entry! Enter a number.");
+   }else if(isNaN(userInput) == false){
+        if(userInputInt % 2 === 0){
+            alert(userInputInt + " is an even number.");
+            }else{
+            alert(userInputInt + " is an odd number.");
+        }
+   }
+
+    if(isNaN(userInput) == false){
+        //let userInputInt = parseFloat(userInput);
+        alert(userInputInt + " + 100 = " + (userInputInt + 100));
+   }
+
+   if(isNaN(userInput) == false){
+        if(userInputInt > 0)
+            alert(userInputInt +" is a positive number.");
+        else
+            alert(userInputInt +" is a negative number.");
+   } 
+}
