@@ -23,19 +23,20 @@
  */
 function analyzeColor(colorName){
     if(colorName == "blue")
-        console.log("the color of the sky is blue");
+        return "the color of the sky is blue";
     else if(colorName == "red")
-        console.log("apples are red.");
+        return "apples are red.";
     else if(colorName == "white")
-        console.log("I have a white dog");
+        return "I have a white dog";
     else if(colorName == "orange")
-        console.log("Oranges are orange.");
+        return"Oranges are orange.";
     else if(colorName == "cyan")
-        console.log("I don't know anything about Cyan.");
+        return "I don't know anything about Cyan.";
     else
-        console.log("No color was entered");
+        return "No color was entered";
 }
-analyzeColor("red");
+var color = analyzeColor("red");
+console.log(color);
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -60,23 +61,24 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 function analyzeColorSwitch(colorName){
     switch (colorName.toLowerCase()){
         case "red":
-            console.log("The apples are red.");
+            return "The apples are red.";
             break;
         case "orange":
-            console.log("Oranges are orange.");
+            return "Oranges are orange.";
             break;
         case "blue":
-            console.log("The sky is blue.");
+            return "The sky is blue.";
             break;
         case "cyan":
-            console.log("I don't know anything about this color input.");
+            return "I don't know anything about this color input.";
             break;
         default:
-            console.log("no color entry? weird.")
+            return "no color entry? weird.";
             break;
     }
 }
-analyzeColorSwitch(randomColor);
+var color1 = analyzeColorSwitch(randomColor);
+console.log(color1);
 
 /**
  * TODO:

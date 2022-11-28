@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://java.codeup.com/extra-exercises/javascript/functions/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>functions</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+<style>
+* { box-sizing: border-box; font-family: sans-serif; }
+body { max-width: 960px; margin: 0 auto; padding: 0 5px; }
+h1 { margin-top: 0; text-align: center; }
+h2 { margin: 1em 0; }
+ul li, ol li { margin: 0.5em 0; }
+code { font-family: monospace; font-size: 1.35em; padding: 4px; }
+pre { padding: 5px 10px; background: rgb(240, 240, 240); }
+pre code { font-size: inherit; padding: 0; }
+em { font-style: normal; text-decoration: underline; }
+table thead th { vertical-align: bottom; border-bottom: 2px solid #dee2e6; }
+table td, table th { padding: .75rem; vertical-align: top; border-top: 1px solid #dee2e6; }
+table { width: 100%; max-width: 100%; margin-bottom: 1rem; background-color: transparent; }
+tr.odd { background-color: rgba(0, 0, 0, 0.03); }
+@media print { hr { display: block; border: 0; page-break-after: always; } }
+</style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1087.0" data-gr-ext-installed="">
+<h1 id="function-drills">Function Drills</h1>
+<p>Functions using conditionals but not loops or arrays:</p>
+<ul>
+<li>Make a function named <code>isOdd(number)</code></li>
+<li>Make a function named <code>isEven(number)</code></li>
+<li>Make a function named <code>identity(input)</code> that returns the input exactly as provided.</li>
+<li>Make a function named <code>isFive(input)</code></li>
+<li>Make a function named <code>addFive(input)</code> that adds five to some input.</li>
+<li>Make a function named <code>isMultipleOfFive(input)</code></li>
+<li>Make a function named <code>isThree(input)</code></li>
+<li>Make a function named <code>isMultipleOfThree(input)</code></li>
+<li>Make a function named <code>isMultipleOfThreeAndFive(input)</code></li>
+<li>Make a function named <code>isMultipleOf(target, n)</code> which checks if target is evenly divisible by <code>n</code></li>
+<li>Make a function named <code>isTrue(boolean)</code></li>
+<li>Make a function named <code>isFalse(boolean)</code></li>
+<li>Make a function named <code>isTruthy(input)</code>, remember that values other than true will behave like true</li>
+<li>Make a function named <code>isFalsy(input)</code>, remember that values other than false behave like false</li>
+<li>Make a function named <code>isVowel(letter)</code></li>
+<li>Make a function named <code>isConsonant(letter)</code></li>
+<li>Make a function named <code>isCapital(letter)</code></li>
+<li>Make a function named <code>isLowerCase(letter)</code></li>
+<li>Make a function named <code>hasLowerCase(string)</code> that returns if a string has any lower cased letter</li>
+<li>Make a function named <code>isSpace(letter)</code> that returns if a character is a space character</li>
+<li>Make a function named <code>isZero(number)</code></li>
+<li>Make a function named <code>notZero(input)</code> that returns true if the input is not zero</li>
+<li>Write a function named <code>lowerCase(string)</code></li>
+<li>Write a function named <code>double(n)</code> that returns a number times two</li>
+<li>Write a function named <code>triple(n)</code> that returns a number times 3</li>
+<li>Write a function named <code>quadruple(n)</code> that returns a number times 4</li>
+<li>Write a function named <code>half(n)</code> that returns 1/2 of the provided input</li>
+<li>Write a function named <code>subtract(a, b)</code> that returns <code>a</code> minus <code>b</code></li>
+<li>Write a function named <code>multiply(a, b)</code> that returns the product of <code>a</code> times <code>b</code></li>
+<li>Write a function named divide(a, b) that returns <code>a</code> divided by <sub>b</sub></li>
+<li>Write a function named <code>remainder(a, b)</code> that returns the remainder after dividing a by b</li>
+<li>Make a function named <code>modulo(a, b)</code> that returns the returns the remainder after dividing a by b</li>
+<li>Write a function named <code>cube(n)</code> that returns n * n * n</li>
+<li>Write a function named <code>squareRoot(n)</code> that returns the square root of the input</li>
+<li>Write a function named <code>cubeRoot(n)</code> that returns the cube root of the input</li>
+<li>Write a function named <code>invertSign(number)</code> that returns a negative version of a postive number, a positve version of negative, and false for all else.</li>
+<li>Write a function named <code>degreesToRadians(number)</code></li>
+<li>Write a function named <code>radiansToDegrees(number)</code></li>
+<li>Make a function named <code>isBlank(input)</code> that determines if a given input is spaces, newline characters, or tabs.</li>
+<li>Make a function named <code>trim(string)</code> that removes empty spaces before and after the input.</li>
+<li>Make a function named <code>areEqual(input1, input2)</code> that returns if both inputs have the same value</li>
+<li>Make a function named <code>areIdentical(input1, input2)</code> that returns if both inputs are same value and data type.</li>
+<li>Make a function named <code>not(input)</code> returns the input with a flipped boolean</li>
+<li>Make a function named <code>notNot(input)</code> that the negation of the negation of the input.</li>
+<li>Make a function named <code>and(predicate1, predicate2)</code> that returns the logical operation of AND</li>
+<li>Make a function named <code>or(predicate1, predicate2)</code> that returns the logical operation of OR</li>
+<li>Write a function called <code>reverseString(string)</code> that reverses a string</li>
+<li>Make a function named <code>absoluteValue(number)</code> that returns the absolute value of a number.</li>
+<li>Make a function named <code>rollDice(sides)</code> that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.</li>
+</ul>
+<h2 id="simple-function-drills">Simple Function Drills</h2>
+<ol style="list-style-type: decimal">
+<li>Make a function called returnTwo() that returns the number 2 when called</li>
+</ol>
+<p>Test this function with <code>console.log(returnTwo())</code></p>
+<ol style="list-style-type: decimal">
+<li><p>Make a function called sayHowdy() which console.logs the string “Howdy!”</p>
+<p>Test this function by directly calling <code>sayHowdy()</code></p>
+<p>Remember this function does not need a defined return value</p></li>
+<li><p>Make a function called returnName() that returns the string of your name</p></li>
+</ol>
+<p>Test this function with <code>console.log(returnName())</code></p>
+<ol style="list-style-type: decimal">
+<li>Make a function called addThree() which takes in a number input and returns the number plus 3.</li>
+</ol>
+<p>Test this function with <code>console.log(addThree(5))</code></p>
+<ol style="list-style-type: decimal">
+<li>Make a function called sayString() which returns the string input passed in.</li>
+</ol>
+<p>Test this function with <code>console.log(sayString('codeup'))</code></p>
+<h2 id="challenge-function-drills">Challenge Function Drills</h2>
+<ul>
+<li><p>Write a function called <code>identity(input)</code> that takes in an argument called input and returns that input.</p></li>
+<li><p>Write a function called <code>getRandomNumber(min, max)</code> that returns a random number between min and max values sent to that function call.</p></li>
+<li><p>Write a function called <code>first(input)</code> that returns the first character in the provided string.</p></li>
+<li><p>Write a function called <code>last(input)</code> that returns the last character of a string</p></li>
+<li><p>Write a function called <code>rest(input)</code> that returns everything but the first character of a string.</p></li>
+<li><p>Write a function called <code>reverse(input)</code> that takes a string and returns it reversed.</p></li>
+<li><p>Write a function called <code>isNumeric(input)</code> that takes an input and returns a boolean if the input is numeric.</p></li>
+<li><p>Write a function called <code>count(input)</code> that takes in a string and returns the number of characters.</p></li>
+<li><p>Write a function called <code>add(a, b)</code> that returns the sum of a and b</p></li>
+<li><p>Write a function called <code>subtract(a, b)</code> that return the difference between the two inputs.</p></li>
+<li><p>Write <code>multiply(a, b)</code> function that returns the product</p></li>
+<li><p>Write a <code>divide(numerator, denominator)</code> function that returns a divided by b</p></li>
+<li><p>Write a <code>remainder(number, divisor)</code> function that returns the remainder left over when dividing <code>number</code> by the <code>divisor</code></p></li>
+<li><p>Write the function <code>square(a)</code> that takes in a number and returns the number multiplied by itself.</p></li>
+<li><p>Write a function called <code>sumOfSquares(a, b)</code> that uses only your <code>add()</code> function and your square function and not + or * operators</p></li>
+<li><p>Write a function called <code>doMath(operator, a, b)</code> that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.</p></li>
+</ul>
+<h2 id="even-more-function-bonuses">Even More Function Bonuses</h2>
+<ol style="list-style-type: decimal">
+<li><p>Create a function that will return how many whitespace characters are at the beginning and end of a string.</p></li>
+<li><p>Create a function that takes in two string inputs.</p>
+<ul>
+<li>If the second string input is present in the first, return the first input string with the second input string removed from it.</li>
+<li>If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string.</li>
+<li>If the second string input is not present in the first, return the first string as entered in the function.</li>
+</ul></li>
+<li><p>Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).</p></li>
+<li><p>EXTRA CHALLENGE: create a function that will return how many whitespace characters are at the beginning of a string (hint: use regex).</p></li>
+<li><p>Create a function <code>returnTrueMessage()</code> that returns the string "Hey, it's true!"</p>
+<ul>
+<li>Create a function <code>returnFalseMessage()</code> that returns the string "Hey, it's false!"</li>
+<li>Create a function <code>returnMessage()</code> that takes in a function and returns the call to the function</li>
+<li>Experiement passing in different functions.</li>
+</ul></li>
+<li><p>Create a function, <code>willLoginUser()</code> that takes in a username string, password string, user age, a boolean indicating if they are an admin.</p>
+<p>The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.</p></li>
+</ol>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
