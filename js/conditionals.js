@@ -132,33 +132,35 @@ console.log(color1);
  */
 
 function calculateTotal(luckyNum, total){
+    let discountedPrice, discount;
     switch(luckyNum){
         case 0:
-            console.log(total * 1);
+            discount = 0;
             break;
         case 1:
-            console.log(total - (total * 0.10));
+            discount = 0.10;
             break;
         case 2:
-            console.log(total - (total * 0.25));
+            discount = 0.25;
             break;
         case 3:
-            console.log(total - (total * 0.35));
-            break;
-        case 4:
-            console.log(total - (total * 0.50));
-            break;
+            di
+            discount = 0.50;
+            break;         
         case 5:
-            console.log(total - total);
+            discount = 1;
             break;
         default:
             console.log("No promotions this time.");
             break;
     }
+    return discountedPrice = total - (total * discount);
 }
-calculateTotal(0, 100) // returns 100
-calculateTotal(4, 100) // returns 50
-calculateTotal(5, 100) //returns 0
+var result = calculateTotal(1, 50);
+console.log(result);
+// calculateTotal(0, 100) // returns 100
+// calculateTotal(0, 100) // returns 50
+// calculateTotal(5, 100) //returns 0
 
 /**
  * TODO:
@@ -176,31 +178,32 @@ let userTotal = prompt("Enter your total cost.")
 let userTotalInt = parseInt(userTotal);
 
 function calculateTotalRandom (luckyNum, total){
+    var discount1, discountedPrice1;
     switch(luckyNum){
         case 0:
-            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + total);
+            discount1 = 0;
             break;
         case 1:
-            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.10)));
+            discount1 = 0.10;
             break;
         case 2:
-            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.25)));
+            discount1 = 0.25;
             break;
         case 3:
-            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.35)));
-            break;
-        case 4:
-            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - (total * 0.50)));
-            break;
+            discount1 = 0.50;
+            break;         
         case 5:
-            alert("Your luck number was: " + luckyNum + ", Before discount: $" + total + " After discount: $" + (total - total));
+            discount1 = 1;
             break;
         default:
-            alert("No promotions at this time.");
+            console.log("No promotions this time.");
             break;
     }
+    discountedPrice1 = total - (total * discount1);
+    return discountedPrice1;
 }
-calculateTotalRandom(luckyNumber, userTotalInt);
+var result = calculateTotalRandom(luckyNumber, userTotalInt);
+alert("Lucky Number: " + luckyNumber + " not discounted price: " + userTotal + " discounted: " + result);
 
 /**
  * TODO:
@@ -226,25 +229,20 @@ if(question == true){
    let userInput =  prompt("Enter your favorite number.");
    let userInputInt = parseFloat(userInput);
 
-   if(isNaN(userInput) == true){
+    if(isNaN(userInput) == true){
         alert("Incorrect entry! Enter a number.");
-   }else if(isNaN(userInput) == false){
-        if(userInputInt % 2 === 0){
-            alert(userInputInt + " is an even number.");
-            }else{
-            alert(userInputInt + " is an odd number.");
-        }
-   }
+    }else if(isNaN(userInput) == false){
 
-    if(isNaN(userInput) == false){
-        //let userInputInt = parseFloat(userInput);
-        alert(userInputInt + " + 100 = " + (userInputInt + 100));
-   }
+        if(userInput % 2 === 0){
+            alert(userInput + " is an even number.");
 
-   if(isNaN(userInput) == false){
-        if(userInputInt > 0)
-            alert(userInputInt +" is a positive number.");
-        else
-            alert(userInputInt +" is a negative number.");
-   } 
+            alert(userInput + " + 100 = " + (userInput + 100));
+       }       
+    } else{
+    alert(userInput + " is an odd number.");
+    }
+    if(userInput > 0)
+        alert(userInput +" is a positive number.");
+    else
+        alert(userInput +" is a negative number.");
 }
