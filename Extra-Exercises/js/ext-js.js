@@ -236,8 +236,19 @@ function reverseString(string){
 }
 //console.log(reverseString("Hello"));
 
+//(30)
 function rollDice(a){
     var random = Math.floor(Math.random() * a) + 1;
     return random;
 }
-console.log(rollDice(4));
+//console.log(rollDice(4));
+
+//(31) creating random number between two numbers
+function getRandomNumber(min, max){
+    let random = Math.floor(Math.random() * (max - min + 1) + min);
+    return random;
+}
+console.log(getRandomNumber(5, 10));
+
+
+//(32)
