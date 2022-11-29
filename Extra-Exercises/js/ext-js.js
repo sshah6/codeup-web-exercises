@@ -1,3 +1,4 @@
+
 console.log("Testing functions");
 
 //(1)
@@ -209,3 +210,34 @@ function areIdentical(a, b){
 // console.log(areIdentical(2, 2));
 
 //(26)
+function not(input){
+    return !input;
+}
+//console.log(not(false));
+
+//(27)
+function and(a, b){
+    return a && b;
+}
+//console.log(and(4, 3));
+
+//(28)
+function or(a, b){
+    return a || b;
+}
+//console.log(or(5, 6));
+
+//(29)
+function reverseString(string){
+    string = string.split("");
+    string = string.reverse();//reverse function only works on arrays
+    string = string.join("");
+    return string;
+}
+//console.log(reverseString("Hello"));
+
+function rollDice(a){
+    var random = Math.floor(Math.random() * a) + 1;
+    return random;
+}
+console.log(rollDice(4));

@@ -229,20 +229,18 @@ if(question == true){
    let userInput =  prompt("Enter your favorite number.");
    let userInputInt = parseFloat(userInput);
 
-    if(isNaN(userInput) == true){
+    if(isNaN(userInputInt) == true){
         alert("Incorrect entry! Enter a number.");
-    }else if(isNaN(userInput) == false){
-
-        if(userInput % 2 === 0){
-            alert(userInput + " is an even number.");
-
-            alert(userInput + " + 100 = " + (userInput + 100));
-       }       
+    }else if(isNaN(userInputInt) == false && userInputInt % 2 === 0){
+        alert(userInputInt + " is an even number.");           
     } else{
-    alert(userInput + " is an odd number.");
+        alert(userInputInt + " is an odd number.");
     }
-    if(userInput > 0)
-        alert(userInput +" is a positive number.");
+    
+    alert(userInputInt + " + 100 = " + (userInputInt + 100));
+
+    if(userInputInt > 0)
+        alert(userInputInt +" is a positive number.");
     else
-        alert(userInput +" is a negative number.");
+        alert(userInputInt +" is a negative number.");
 }
