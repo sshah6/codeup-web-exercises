@@ -248,7 +248,82 @@ function getRandomNumber(min, max){
     let random = Math.floor(Math.random() * (max - min + 1) + min);
     return random;
 }
-console.log(getRandomNumber(5, 10));
+//console.log(getRandomNumber(5, 10));
 
 
 //(32)
+function firstInput(str){
+    return str[0];
+}
+//console.log(firstInput("Hello"));
+
+//(33)
+function lastInput(str){
+    return str[str.length - 1];
+}
+//console.log(lastInput("Hello"));
+
+//(34)
+function rest(str){
+    return str.slice(1);
+}
+//console.log(rest("Hello"));
+
+//(35)
+function reverse(str){
+    str = str.split("");
+    str = str.reverse();
+    str = str.join("");
+    return str;
+}
+//console.log(reverse("Hello"));
+
+//(36)
+function count(input){
+    return input.length;
+}
+//console.log(count("Hello"));
+
+//(37)
+function remainder(number, divisor){
+    return number % divisor;
+}
+//console.log(remainder(10, 7));
+
+//(38)
+function sumOfSquares(a, b){
+    return Math.pow(a, 2) + Math.pow(b, 2);
+}
+//console.log(sumOfSquares(2, 3));
+
+//(39)
+function doMath(operator, a, b){
+    if(operator == '-')
+        return a - b;
+    else if(operator == '+')
+        return a + b;
+    else if(operator == '*')
+        return a * b;
+    else if(operator == '/')
+        return a / b;
+}
+// console.log(doMath( '+' , 2, 3));
+// console.log(doMath("-", 2, 3));
+// console.log(doMath("*", 2, 3));
+// console.log(doMath("/", 2, 3));
+
+//(40) counting white spaces at the beginning and end of a string
+function countWhiteSpace(str){
+    str = str.split(" ").length - 1;
+    return str;
+}
+//console.log(countWhiteSpace("  hello "));
+
+//(41)
+function removeString(str1, str2){
+    if(str2.includes(str1) === true){
+        let splitStr1 = str1.split(str2);
+        console.log(splitStr1);
+    }
+}    
+removeString("hello", "el");

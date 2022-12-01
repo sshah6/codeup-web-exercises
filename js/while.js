@@ -1,15 +1,17 @@
 console.log("testing routes (while loop)");
 
 //(2)
+let result = 1;
+let j = 2;
 
-var j = 1;
-while( j < 20){
+   while( result < 20){
    let result = Math.pow(2, j);
     j++; 
     console.log(result);
     if(result === 65536)
-    break; 
-}
+    break;
+}   
+
 
 //(1) ###### do-while loop ######
 
@@ -23,7 +25,7 @@ let i = 0;
         console.log("Yay! I sold them all. ;)");
         break;
     }else if(allCones >= soldCones){
-        console.log(soldCones + " cone/cones were sold.");
+        console.log(soldCones + " cone/ cones were sold.");
         allCones = allCones - soldCones;//subtracting the amount of sold cones from total cones
         console.log("The remaining cones: " + allCones); 
     }else if(allCones < soldCones){  
