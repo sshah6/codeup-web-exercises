@@ -21,18 +21,6 @@ while(true){
     }
 }
 
-//(3)
-
-// for (let i = 0; i < 50; i++){
-//     var intInput = parseInt(oddNumFromOneToFifty)
-//     if(i % 2 !== 0){
-//         if(intInput === i) {
-//             console.log("Yikes! skipping number: " + intInput);
-//             continue;  // not printing the number, or skipping it
-//         }
-//         console.log("Here is an odd number: " + i);
-//     }      
-// }
 
 
 
