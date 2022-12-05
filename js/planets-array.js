@@ -36,7 +36,8 @@ console.log("Checking routes for palnets array");
     console.log(planets);
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
-    console.log(planets[2]);
+    let iOfEarth = planets.indexOf('Earth');
+    console.log(planets.splice(iOfEarth, 1));
 
     console.log("Reversing the order of the planets array.");
     planets.reverse();

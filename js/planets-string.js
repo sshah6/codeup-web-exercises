@@ -32,13 +32,13 @@ console.log("Checking route for split/join ex");
      * string, and <li> tags around each planet.
      */
     const planetsInUl = `<ul><li> ${planetsArray.join('</li><li>')}</li></ul>`;
+    //Or
+                      //"<ul><li>" + planetsArray.join("</lil><li>") + "</lil><ul>";
     console.log(planetsInUl);
-    // const planetsInLi = planetsArray.join("<li>")
-    // console.log(planetsInLi);
 
-    document.getElementById("demo").innerHTML = planetsArrayWithTag;
-    document.getElementById("demo2").innerHTML = planetsInUl;
-    //document.getElementById("demo1").innerHTML = planetsInLi;
+    document.getElementById("demo").innerHTML = planetsArrayWithTag;//planetsArrayWithTag;/pushed the html created in js to the page.
+    document.getElementById("demo2").innerHTML = planetsInUl;//pushed the html created in js to the page.
+    document.write(planetsInUl); //pushed the html created in js to the page.
 })();
 
 // ** Create a function that will take in a formatted string of numbers and return an array of phone numbers without any symbols. Console.log the output of the returned array.
