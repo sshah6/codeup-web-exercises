@@ -321,9 +321,22 @@ function countWhiteSpace(str){
 
 //(41)
 function removeString(str1, str2){
-    if(str2.includes(str1) === true){
-        let splitStr1 = str1.split(str2);
-        console.log(splitStr1);
+     if(str1.includes(str2)){       //checking to see if the second string is included in first string
+       return str1.replace(str2, ""); //if true, then it removes the second string and returns the value
+    }else{
+        return str1;                //if its not included then it returns the first string
     }
+     
 }    
-removeString("hello", "el");
+//console.log(removeString("hellohello", "not"));
+
+//(42)
+function checkLast(str){
+    return str[str.length - 1] === "a"; //returning true if the last letter of the input is "a", else false.
+}
+//console.log(checkLast("hola"));
+//console.log(checkLast("hole"));
+
+//(43) create a function that counts the amount of white spaces in the beginning of a string
+
+
