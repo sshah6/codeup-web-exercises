@@ -29,7 +29,7 @@ console.log("checking routes for objects exercise");
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello = function sayHello(){
-        console.log("Hello from " + person.firstName + ' ' + person.lastName);
+        console.log("Hello from " + this.firstName + ' ' + this.lastName);
     }
     person.sayHello(); 
     /** TODO:
@@ -45,8 +45,6 @@ console.log("checking routes for objects exercise");
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-
-
 
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -85,19 +83,19 @@ console.log("checking routes for objects exercise");
      */
     const books = [
         {
-            title: "The lost way!",
+            title: "How to be a king!",
             author: {
-            firstName: "Alex jr",
-            lastName: "Fergo"
+            firstName: "Alex",
+            lastName: "The King"
             }
         },{
-            title: "The universe",
+            title: "How to scape a cat!",
             author:{
                 firstName: "Jerry",
                 lastName: "The mouse"
             }
         },{
-            title: "The way out",
+            title: "How to catch a mouse!",
             author:{
                 firstName: "Tom",
                 lastName: "The cat"
@@ -152,10 +150,14 @@ console.log("checking routes for objects exercise");
      */
     const makeBook = [];
     function createBook(bookTitle, authName){
-       let obj = {title: bookTitle,
-                    author: authName};
-                    makeBook.push(obj);
-        
+        let authorName = authName.split(" ");
+        let obj = {title: bookTitle,
+                    author: {
+                    firstName: authorName[0],
+                    lastName: authorName[1]
+                }
+        }            
+    makeBook.push(obj);
     }
 
     createBook("Hunting", "The Anony");
