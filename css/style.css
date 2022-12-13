@@ -1,0 +1,9 @@
+h1{
+    color:red;
+}
+
+.fancy-header{  /*the fancy-header class has a precedence than the h1 tag because its very broad. so the more specific the more precedence it has.*/
+    color:blue;
+}
+
+
