@@ -1,9 +1,39 @@
+body{
+    background-color: aqua;
+    background-image: url("../images/background1.jpg");
+    background-size: 100% 100%;
+    font-family: "Ultra", serif;
+    font-size: 25px;
+}
 h1{
     color:red;
+    text-align: center;
+    text-decoration: underline;
 }
 
 .fancy-header{  /*the fancy-header class has a precedence than the h1 tag because its very broad. so the more specific the more precedence it has.*/
     color:blue;
 }
+.cvalue-list{
+    list-style-type: georgian;
+}
+.p-list{
+    list-style-type:lower-roman;
+}
+.vision-list{
+    list-style-type:lower-greek;
+    
+}
+table tr th{
+    color:rgb(26, 3, 116);
+    font-size: 2em;
+ }
 
+ table tr td{
+    font-size: 1.5em;
+    padding: 10px;
+ }
 
+ a:visited{
+    color: unset;
+ }
