@@ -4,6 +4,8 @@ body{
     background-size: 100% 100%;
     font-family: "Ultra", serif;
     font-size: 25px;
+    background-attachment: fixed;
+    overflow: scroll;
 }
 h1{
     color:red;
