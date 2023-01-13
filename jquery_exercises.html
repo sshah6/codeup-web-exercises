@@ -7,14 +7,35 @@
     <title>jQuery Exercise</title>
   </head>
   <body>
-    <h1>
+    <h1 id="header" class="codeup">
       This is a static template, there is no bundler or bundling involved!
     </h1>
+    <p id="paragraph" class="codeup">This is a paragraph tag</p>
+    <ul class="ul-class" id="ul-id">
+      <li>first</li>
+      <li>second</li>
+      <li>Third</li>
+    </ul>
+    <div class="div-class" id="codeup">This is a Div tag</div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-      $(function () {
-        alert("The DOM has finished loading!");
-      });
+      // $(function () {
+      //   alert("The DOM has finished loading!");
+      // });
+      // let theHeader = $('#header').html();
+      // alert(theHeader);
+      // let theParagraph = $('#paragraph').html();
+      // alert(theParagraph);
+      // $('.codeup').css("border", '1px solid red');
+      // $("ul").css("font-size", '20px')
+      // $('h1').css("background", 'yeallow');
+      // $('p').css("background", 'yellow');
+      // $('ul').css("background", 'yellow');
+      $("h1, p, ul").css('background-color', 'yellow');
+      let headerAlert = $('h1').html();
+      // alert(headerAlert);
+
     </script>
   </body>
 </html>
