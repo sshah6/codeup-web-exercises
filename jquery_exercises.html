@@ -11,6 +11,8 @@
       This is a static template, there is no bundler or bundling involved!
     </h1>
     <p id="paragraph" class="codeup">This is a paragraph tag</p>
+    <p id="paragraph" class="codeup">This is a paragraph tag</p>
+    <p id="paragraph" class="codeup">This is a paragraph tag</p>
     <ul class="ul-class" id="ul-id">
       <li>first</li>
       <li>second</li>
@@ -32,10 +34,25 @@
       // $('h1').css("background", 'yeallow');
       // $('p').css("background", 'yellow');
       // $('ul').css("background", 'yellow');
-      $("h1, p, ul").css('background-color', 'yellow');
-      let headerAlert = $('h1').html();
+      // $("h1, p, ul").css('background-color', 'yellow');
+      // let headerAlert = $('h1').html();
       // alert(headerAlert);
 
+      $('#header').on('click', function(){
+        $('#header').css('background-color', "blue");
+      });
+
+      $('p').on('click', function(){
+        $('p').css('font-size', '18px');
+      });
+
+      $('li').on('mouseover', function(){
+        $('li').css('color', 'red')
+        .on('mouseout', function(){
+          $('li').css('color', 'black');
+        })
+      });
+      
     </script>
   </body>
 </html>
