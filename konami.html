@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+    <h1>Konami Code</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- <script src="/js/jquery.js"></script> -->
+    <audio id="myAudio" src="" type="audio/mpeg">
+      </audio>
+
+    <script>
+        "use strict";
+        
+        let codeLive = '38384040373937396665';
+        let codeAudio = '38324032';
+        let input = [];
+        $(document).keyup(function(event){
+            console.log(event.keyCode);
+            let keyPressed = event.keyCode;
+            input.push(keyPressed);
+            console.log(input);
+            console.log("joined" + input.join(''));
+
+            if(input.join('') == codeLive){
+                alert("Activated: You have added 30 lives.");
+
+            }else if(input.join('') == codeAudio){
+                document.getElementById("myAudio").play();
+                console.log("Palying audio")
+            }
+        });
+        
+    </script>
+</body>
+</html>
