@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>jQuery Faqs Exercise</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+        .high-light{
+            background-color: yellow;
+        }
+       
+    </style>
+
+    <div class="page-wrapper">
+        <div class="container mt-5 fs-3">
+            <p class="fs-3 fw-bolder mb-5 text-center">Top Ten Questions about Glacier National Park</p>
+            <dl>
+                <dt>Q: Where is Glacier National Park located?</dt>
+                <dd class="invisible">A:
+                  Glacier National Park is located in northwestern Montana on the U.S./             Canadian border. Access to the park from the east and west is along        U.S.     Highway 2. Park headquarters is located in West Glacier.</dd>
+
+                  <dt>Q: When is the park open?</dt>
+                  <dd class="invisible">A: Glacier National Park is open year-round, 24 hours a day.        In the         fall winter and spring, some roads are inaccessible by car due   to          snow.</dd>
+                
+
+                  <dt>Q: What does it cost to enter the park?</dt>
+                  <dd class="invisible">A:
+                  Glacier National Park is open year-round, 24 hours a day. In the         fall         winter and spring, some roads are inaccessible by car due to          snow.</dd>
+
+                  <dt>Q: Where are the closest airports to the park? Is there transportation                from the airports to the park?</dt>
+                  <dd class="invisible">A:
+                  Glacier Park International Airport in Kalispell, Montana is 25 miles         west         of park headquarters in West Glacier, Montana.</dd>
+
+                  <dt>Q: What is the closest train station to the park?</dt>
+                  <dd class="invisible">A:
+                  Amtrak rail lines parallel the southern and southwestern borders of          the      park. Amtrak stops at West Glacier (Belton), East Glacier          (summer only),       and Essex (upon request).</dd>
+
+                  <dt>Q: What transportation is available within the park?</dt>
+                  <dd class="invisible">A:
+                  In addition to private automobiles, guided tours are available in            the      main sections of the park. Contact Glacier Park, Inc. and Sun          Tours for        information (see addresses and telephone numbers below).         Rental cars are       available in neighboring communities.</dd>
+
+                  <dt>Q: Where are the visitor centers located in the park?</dt>
+                  <dd class="invisible">A:
+                  Visitor centers are located in Apgar, Logan Pass, and St. Mary. Each         of       these visitor centers, as well as the Many Glacier and Two          Medicine    Ranger Stations, have park rangers on duty throughout the         summer months to    answer questions and provide information. During       the winter months, Apgar      Visitor Center is open on week-ends.
+                        </dd>
+                  <dt>Q: Do you have campgrounds in the park? Can I make a reservation?</dt>
+                  <dd class="invisible">A:
+                  Glacier National Park has 13 campgrounds, which provide just over            1000         campsites. Most of the campgrounds are operated on a "first           come, first       serve" basis. Fish Creek and St. Mary Campgrounds will         be available for     reservation by calling 1-800-365-2267. Click here     for more detailed       information on camping.
+                        </dd>
+                  <dt>Q: Is it possible to reserve a backcountry campsite?</dt>
+                  <dd class="invisible">A:
+                  Reservations for backcountry campsites may be made in advance,           beginning        April 1 for the upcoming summer. For further information         on backcountry     camping and for making reservations, visit our      website section on Backcountry       Camping.</dd>
+
+                  <dt>Q: Can I drive my RV along the Going-to-the-Sun Road?</dt>
+                  <dd class="invisible">A:
+                  Vehicles, and vehicle combinations, longer than 21 feet (including                bumpers) or wider than 8 feet (including mirrors) are prohibited       between      Avalanche Campground and the Sun Point parking area. You may       however, drive      to Avalanche if traveling east, and to Sun Point, if       traveling west.   Vehicles over 10 feet in height may have difficulty    driving west from Logan       Pass due to rock overhangs. Stock trucks and         trailers may access Packers    Roost and Siyeh Bend.</dd>
+            </dl>
+            <button type="button" class="btn btn-primary first-button">Last El of ULs</button>
+            <!-- <button class="btn btn-primary first-ul">First UL</button>
+            <button class="btn btn-primary first-ul">First UL</button> -->
+            <ul class="ul first-list">
+                <h2 class="h2">Q: Where is Glacier National Park located?</h2>
+                <li>A:
+                    Glacier National Park is located in northwestern Montana on the U.</li>
+                <li>S./Canadian border. Access to the park from the east and west </li>
+                <li>is along U.S. Highway 2. Park headquarters is located in West Glacier.</li>
+            </ul>
+            <ul class="ul second-list">
+                <h2 class="h2">Q: Can I drive my RV along the Going-to-the-Sun Road? </h2>
+                <li>Vehicles, and vehicle combinations, longer than 21 feet </li>
+                <li>(including bumpers) or wider than 8 feet (including </li>
+                <li>mirrors) are prohibited between Avalanche Campground and the</li>
+            </ul>
+            <ul class="ul third-list">
+                <h2 class="h2">Q: Is it possible to reserve a backcountry campsite?</h2>
+                <li>Reservations for backcountry campsites may be made in advance,</li>
+                <li>beginning  April 1 for the upcoming summer. For further </li>
+                <li>information  on backcountry     camping and for making </li>
+            </ul>
+            <section>
+                <div class="row my-5 d-flex">
+                    <div class="col-4 monkey1">
+                    <img class="monkey" src="./images/monkey.webp" width="300px" height="auto">
+
+                    </div>
+                    <div class="col-4 donkey1">
+                        <img class="donkey" src="./images/Donkey.webp" width="300px" height="200px">
+                    </div>
+
+                    <div class="col-4 bunny1">
+                        <img class="bunny" src="./images/bunny.jpeg" width="300px">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $('dt').click(function(){
+            $('dd').toggleClass('invisible'); 
+            $(this).toggleClass('high-light'); 
+        });
+
+        // $('.first-button').click(function(){
+        //     $('.ul')
+        //     .children()
+        //     .next()
+        //     .next()
+        //     .next()
+        //     .css('background', 'yellow');
+        // });
+        $('.first-button').click(function(){
+            $('ul').each(function(index, element){
+                $(element).children().last().css('background', 'yellow');
+            })
+        })
+        $('.h2').click(function(){
+            $(this)
+            .parent()
+            .children()
+            .css('font-weight', 'bold');
+        });
+        $('li').click(function(){
+            $(this)
+            .parent()
+            .children()
+            .next()
+            .first()
+            .css('color', 'blue');
+        });
+        
+        $('.monkey').click(function(){
+            let row = $('.monkey').parent();
+            row.insertAfter(row.next().next());
+            console.log("monkey clicked");
+        });
+        $('.bunny').click(function(){
+            let row = $('.bunny').parent();
+            row.insertAfter(row.next());
+            console.log("Bunny clicked");
+        });
+        $('.donkey').click(function(){
+            let row = $('.donkey').parent();
+            row.insertAfter(row.next());
+            console.log("donkey clicked");
+        });
+
+    </script>
+</body>
+</html>
