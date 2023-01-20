@@ -87,7 +87,7 @@
                 <li>information  on backcountry     camping and for making </li>
             </ul>
             <section>
-                <div class="row my-5 d-flex">
+                <div class="row my-5 d-flex justify-content-between">
                     <div class="col-4 monkey1">
                     <img class="monkey" src="./images/monkey.webp" width="300px" height="auto">
 
@@ -98,8 +98,14 @@
 
                     <div class="col-4 bunny1">
                         <img class="bunny" src="./images/bunny.jpeg" width="300px">
-                    </div>
+                    </div>   
                 </div>
+            <div class="col-12 d-flex justify-content-around mb-5">
+                <button id="btn1" class="btn btn-primary">Swap photo</button>
+                <button id="btn2" class="btn btn-primary">Swap photo</button>
+                <button id="btn3" class="btn btn-primary">Swap photo</button>
+            </div>
+                
             </section>
         </div>
     </div>
@@ -138,20 +144,20 @@
             .css('color', 'blue');
         });
         
-        $('.monkey').click(function(){
+        $('#btn1').click(function(){
             let row = $('.monkey').parent();
-            row.insertAfter(row.next().next());
-            console.log("monkey clicked");
+            row.insertAfter(row.next());
+            // console.log("monkey clicked");
         });
-        $('.bunny').click(function(){
+        $('#btn2').click(function(){
             let row = $('.bunny').parent();
             row.insertAfter(row.next());
-            console.log("Bunny clicked");
+            // console.log("Bunny clicked");
         });
-        $('.donkey').click(function(){
-            let row = $('.donkey').parent();
+        $('btn3').click(function(){
+            let row = $('.bunny').parent();
             row.insertAfter(row.next());
-            console.log("donkey clicked");
+            // console.log("donkey clicked");
         });
 
     </script>
