@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mapbpx exercise</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- Mapbox CSS -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(153, 158, 158);
+      }
+      #map {
+        /* the width and height may be set to any size */
+        width: 100%;
+        height: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/keys.js"></script>
+    <!-- <script src="./js/mapbox-geocoder-utils.js"></script> -->
+    <h1 class="text-center">MapBox exercise!</h1>
+
+    <!-- The HTML element that serves as the Mapbox container -->
+    <div class="page-wrapper">
+      <header class="container bg-dark-subtle shadow">
+        <div class="row">
+          <div class="col-4 p-2 bg-dark-subtle">My Favorite Restaurant</div>
+          <div class="column"></div>
+        </div>
+      </header>
+      <hr />
+      <main class="container border border-1">
+        <div class="row">
+          <aside class="col-4 bg-light-subtle border border-1">
+            <!-- Radio Buttons start -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="zoom-5"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Zoom 5
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="zoom-10"
+                checked
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Zoom 10
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="zoom-15"
+                checked
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Zoom 15
+              </label>
+            </div>
+            <!-- Radio buttons end -->
+
+            <!-- Start of address input -->
+            <form class="">
+              <div class="mb-3 mt-3">
+                <label for="address" class="form-label"
+                  >Type Address to search</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address-input" 
+                />
+              </div>
+              <button type="submit" class="btn btn-primary address-search">Search</button>
+            </form>
+            <!-- End of address input -->
+
+          </aside>
+          <div class="col-8 border border-1">
+            <div id="map"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Mapbox JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      mapboxgl.accessToken = keys.mapbox;
+      let map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v9",
+        zoom: 11.5,
+        center: [-98.5234, 29.5349],
+      });
+//Geocode utilities
+    function geocode(search, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+        // to get all the data from the request, comment out the following three lines...
+        }).then(function(data) {
+            return data.features[0].center;
+        });
+}
+//end of geocode utilities
+
+    //   console.log("zoom of the map " + map.zoom);
+    //   console.log("zoom of the map " + map.getZoom());
+
+      let favoriteRes = [
+        {
+          address: "2211 NW Military Hwy #131, San Antonio, TX 78213",
+          food: "#1 Favorite Fresh food",
+          type: "Protien",
+          price: "cheap",
+          long: -98.5234,
+          lat: 29.5349,
+        },
+        {
+          address: "6989 Blanco Rd, San Antonio, TX 78216",
+          food: "#1 Favorite vege food",
+          type: "vege",
+          price: "medium",
+          long: -98.5077,
+          lat: 29.52,
+        },
+        {
+          address: "5910 Babcock Rd #104, San Antonio, TX 78240",
+          food: "#1 Favorite seafood",
+          type: "Seafood",
+          Price: "High",
+          long: -98.6032,
+          lat: 29.5293,
+        },
+      ];
+      function favoriteRestaurant(favoriteRes) {
+        favoriteRes.forEach(function (input) {
+        //   console.log(input.long);
+        //   console.log(input.lat);
+          let marker = new mapboxgl.Marker()
+            .setLngLat([input.long, input.lat])
+            .addTo(map);
+          var alamoPopup = new mapboxgl.Popup().setHTML(`
+                        <p>${input.food}</p>
+                        <p>${input.type}</p>
+                        <p>${input.price}</p>
+                        <p>${input.address}</p>
+                    `);
+          marker.setPopup(alamoPopup);
+        });
+      }
+      favoriteRestaurant(favoriteRes);
+    //   Start of zoom radio functions
+      $("#zoom-5").on("click", function () {
+        map.setZoom(5);
+      });
+      $("#zoom-10").on("click", function () {
+        map.setZoom(10);
+      });
+      $("#zoom-15").on("click", function () {
+        map.setZoom(15);
+      });
+      //end of zoom radio functions
+      //start of address search functions
+      let address = $('#address-input').val();
+      console.log("address input here " + address);
+
+      $('.address-search').on('click', function(e){
+        e.preventDefault();
+        $('#address-input').val();
+        console.log("address input here " + $('#address-input').val());
+
+            // geocode("", keys.mapbox).then(function(result) {
+            // console.log(result);
+            // map.setCenter(result);
+            // map.setZoom(20);
+            // });
+      });
+
+    </script>
+  </body>
+</html>

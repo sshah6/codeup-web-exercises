@@ -21,12 +21,13 @@
                 let html = '';
                 console.log(data);
                 for(let i = 0; i < data.length; i++){
-                    html += `<div class='border'>
+                    html += 
+                    `<div class='border'>
                         <div class="col-12 d-flex justify-content-center p-3 fs-2 mt-5"> ${data[i].title} </div>
                         <div class='col-12 text-center'> ${data[i].content} </div>
-                        <div class='col-12 text-center mt-2 '> ${data[i].categories} </div>
+                        <div class='col-12 text-center mt-2 '> Genre: ${data[i].categories} </div>
                         <div class='col-12 text-center mt-2'> ${data[i].date} </div>
-                          </div>`
+                    </div>`
                 }
                 $('#posts').html(html);
             });
