@@ -22,13 +22,29 @@
         margin: 0;
         padding: 0;
       }
+      .header{
+        background-image: url('./images/header-map.jpg');
+        background-size: cover;
+      }
       body {
         background-color: rgb(153, 158, 158);
+        background: url("./images/galaxy.jpg");
+        background-size: 100%;
+        height:auto;
+      }
+
+      .aside{
+        background-image: url('./images/aside-bg.jpg');
+        background-size: cover;
       }
       #map {
         /* the width and height may be set to any size */
         width: 100%;
-        height: 700px;
+        height: 800px;
+      }
+      .images{
+        width: 220px;
+        height: auto;
       }
     </style>
   </head>
@@ -45,22 +61,24 @@
     ></script>
     <script src="./js/keys.js"></script>
     <!-- <script src="./js/mapbox-geocoder-utils.js"></script> -->
-    <h1 class="text-center">MapBox exercise!</h1>
 
     <!-- The HTML element that serves as the Mapbox container -->
     <div class="page-wrapper">
-      <header class="container bg-dark-subtle shadow">
+      <header class=" header container  bg-dark-subtle shadow my-4 sticky rounded">
         <div class="row">
-          <div class="col-4 p-2 bg-dark-subtle">My Favorite Restaurant</div>
-          <div class="column"></div>
+          <div class="col-6 mx-2 fs-1 text-light">
+            <img class="mb-2" src="./Images/map-icon.png" width="60px" height="auto">
+            My Favorite Restaurant
+          </div>
+          <div class="col-8 text-center fs-5"></div>
         </div>
       </header>
-      <hr />
-      <main class="container border border-1">
+
+      <main class="container">
         <div class="row">
-          <aside class="col-4 bg-light-subtle border border-1">
+          <aside class="aside col-4 border border-dark rounded">
             <!-- Radio Buttons start -->
-            <div class="form-check">
+            <div class="form-check mt-2">
               <input
                 class="form-check-input"
                 type="radio"
@@ -68,7 +86,7 @@
                 id="zoom-5"
               />
               <label class="form-check-label" for="flexRadioDefault1">
-                Zoom 5
+                Zoom 5x
               </label>
             </div>
             <div class="form-check">
@@ -80,7 +98,7 @@
                 checked
               />
               <label class="form-check-label" for="flexRadioDefault2">
-                Zoom 10
+                Zoom 10x
               </label>
             </div>
             <div class="form-check">
@@ -92,29 +110,30 @@
                 checked
               />
               <label class="form-check-label" for="flexRadioDefault2">
-                Zoom 15
+                Zoom 15x
               </label>
             </div>
             <!-- Radio buttons end -->
+
+            <!-- Button hiding the markers -->
+            <button class="btn btn-primary mt-3" id="hide-markers">Hide Markers</button>
+            <!-- End of Buttons hiding markers -->
 
             <!-- Start of address input -->
             <form class="">
               <div class="mb-3 mt-3">
                 <label for="address" class="form-label"
-                  >Type Address to search</label
+                  >Type Address to search:</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="address-input" 
-                />
+                <input type="text" class="form-control" id="address-input" />
               </div>
-              <button type="submit" class="btn btn-primary address-search">Search</button>
+              <button type="submit" class="btn btn-primary address-search">
+                Search
+              </button>
             </form>
             <!-- End of address input -->
-
           </aside>
-          <div class="col-8 border border-1">
+          <div class="col-8 p-0 border border-dark rounded">
             <div id="map"></div>
           </div>
         </div>
@@ -133,22 +152,28 @@
         zoom: 11.5,
         center: [-98.5234, 29.5349],
       });
-//Geocode utilities
-    function geocode(search, token) {
-    var baseUrl = 'https://api.mapbox.com';
-    var endPoint = '/geocoding/v5/mapbox.places/';
-    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-        .then(function(res) {
+      //Geocode utilities
+      function geocode(search, token) {
+        var baseUrl = "https://api.mapbox.com";
+        var endPoint = "/geocoding/v5/mapbox.places/";
+        return fetch(
+          baseUrl +
+            endPoint +
+            encodeURIComponent(search) +
+            ".json" +
+            "?" +
+            "access_token=" +
+            token
+        )
+          .then(function (res) {
             return res.json();
-        // to get all the data from the request, comment out the following three lines...
-        }).then(function(data) {
+            // to get all the data from the request, comment out the following three lines...
+          })
+          .then(function (data) {
             return data.features[0].center;
-        });
-}
-//end of geocode utilities
-
-    //   console.log("zoom of the map " + map.zoom);
-    //   console.log("zoom of the map " + map.getZoom());
+          });
+      }
+      //================end of geocode utilities
 
       let favoriteRes = [
         {
@@ -157,7 +182,8 @@
           type: "Protien",
           price: "cheap",
           long: -98.5234,
-          lat: 29.5349,
+          lat: 29.5349, 
+          image: './images/food1.jpg',
         },
         {
           address: "6989 Blanco Rd, San Antonio, TX 78216",
@@ -166,34 +192,50 @@
           price: "medium",
           long: -98.5077,
           lat: 29.52,
+          image: './images/food1.jpg',
         },
         {
           address: "5910 Babcock Rd #104, San Antonio, TX 78240",
           food: "#1 Favorite seafood",
           type: "Seafood",
-          Price: "High",
+          price: "High",
           long: -98.6032,
           lat: 29.5293,
+          image: './images/food1.jpg',
         },
       ];
+        
+      //==================== start of function determining the favorite restaurants
       function favoriteRestaurant(favoriteRes) {
         favoriteRes.forEach(function (input) {
-        //   console.log(input.long);
-        //   console.log(input.lat);
-          let marker = new mapboxgl.Marker()
+          //   console.log(input.long);
+          //   console.log(input.lat);
+            let marker = new mapboxgl
+            .Marker({color: 'blue'})
             .setLngLat([input.long, input.lat])
-            .addTo(map);
+            .addTo(map)
+            
           var alamoPopup = new mapboxgl.Popup().setHTML(`
                         <p>${input.food}</p>
+                        <img class="images mb-2" src="${input.image}">
                         <p>${input.type}</p>
                         <p>${input.price}</p>
                         <p>${input.address}</p>
+                        
                     `);
-          marker.setPopup(alamoPopup);
+              marker.setPopup(alamoPopup);
+
+        $('#hide-markers').on('click', function(){
+            marker.remove();
+        });
+        $('#hide-markers').on('dblclick', function(){
+            marker.addTo(map);
+        });
         });
       }
       favoriteRestaurant(favoriteRes);
-    //   Start of zoom radio functions
+
+      // ================Start of zoom radio functions
       $("#zoom-5").on("click", function () {
         map.setZoom(5);
       });
@@ -203,23 +245,36 @@
       $("#zoom-15").on("click", function () {
         map.setZoom(15);
       });
-      //end of zoom radio functions
-      //start of address search functions
-      let address = $('#address-input').val();
-      console.log("address input here " + address);
+      //=====================end of zoom radio functions
 
-      $('.address-search').on('click', function(e){
-        e.preventDefault();
-        $('#address-input').val();
-        console.log("address input here " + $('#address-input').val());
+      //===================== start of address search functions
+      $(".address-search").on("click", function (e) {//when the search button is clicked
+        e.preventDefault(); //stops it from refreshing(or it can't get the searchbox value)
+        let address = $("#address-input").val(); //storing the value of searchbox in a variable
+        // console.log("address input " + address);
 
-            // geocode("", keys.mapbox).then(function(result) {
-            // console.log(result);
-            // map.setCenter(result);
-            // map.setZoom(20);
-            // });
+        geocode(address, keys.mapbox).then(function (result) {  //get the search value, and turns to coordinates
+          // console.log(result);
+          map.setCenter(result); //centering the map to the searched cooridinates
+          map.setZoom(10); //setting zoom to 10x
+          let marker = new mapboxgl.Marker() //marking the address with a marker
+            .setLngLat(result) //setting the long and lat
+            .addTo(map); //adding them to map api function
+          var alamoPopup = new mapboxgl.Popup().setHTML(    //setting a new popup message
+            "<p>The searched address is here!</p>" + `<p> ${address} </P>` //printing the address in the popup, as typed by user
+          );
+          marker.setPopup(alamoPopup); //popup comes out of marker
+
+        $('#hide-markers').on('click', function(){
+            marker.remove();
+        });
+        $('#hide-markers').on('dblclick', function(){
+            marker.addTo(map);
+        });
+        
+        });
       });
-
+      //==================end of search function as the search button is clicked
     </script>
   </body>
 </html>
