@@ -152,6 +152,7 @@
         zoom: 11.5,
         center: [-98.5234, 29.5349],
       });
+
       //Geocode utilities
       function geocode(search, token) {
         var baseUrl = "https://api.mapbox.com";
@@ -192,7 +193,7 @@
           price: "medium",
           long: -98.5077,
           lat: 29.52,
-          image: './images/food1.jpg',
+          image: './images/food2.jpg',
         },
         {
           address: "5910 Babcock Rd #104, San Antonio, TX 78240",
@@ -201,7 +202,7 @@
           price: "High",
           long: -98.6032,
           lat: 29.5293,
-          image: './images/food1.jpg',
+          image: './images/food3.jpg',
         },
       ];
         
@@ -271,7 +272,6 @@
         $('#hide-markers').on('dblclick', function(){
             marker.addTo(map);
         });
-        
         });
       });
       //==================end of search function as the search button is clicked
