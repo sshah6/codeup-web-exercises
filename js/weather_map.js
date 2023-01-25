@@ -113,7 +113,7 @@ function loadWeather(lon, lat) {
       console.log(error)
     })
 }
-loadWeather(-98.4916, 29.4252); //getting the weather on page load for the centermap
+loadWeather(-98.4916, 29.4252) //getting the weather on page load for the centermap
 
 //reverse Geocode utilities
 function reverseGeocode(coordinates, token) {
@@ -145,7 +145,7 @@ function reverseGeocode(coordinates, token) {
 function getAddress(lon, lat) {
   reverseGeocode({ lng: lon, lat: lat }, keys.mapbox).then(function (results) {
     let html = ''
-    html += `<p class="text-light fs-5">  Current city: ${results}</p>`
+    html += `<p class="text-light fs-3">  Current city: ${results.split(',').slice(1, 4)}</p>`
     $('#header-city').html(html)
   })
 }
@@ -155,6 +155,12 @@ function makeMarker(lon, lat) {
   let marker = new mapboxgl.Marker({ color: 'blue', draggable: true })
     .setLngLat([lon, lat])
     .addTo(map)
+
+  //The bellow function removes marker serach clicke is clicked
+  $('.search-button').on('click', function (e) {
+    e.preventDefault();
+    marker.remove();
+  })
   marker.on('dragend', function () {
     var lngLat = marker.getLngLat()
     loadWeather(lngLat.lng, lngLat.lat)
@@ -191,5 +197,5 @@ function searchAddWeather() {
 //Calling the weather API on search button click
 $('.search-button').on('click', function (e) {
   e.preventDefault()
-  searchAddWeather()
+  searchAddWeather();
 })

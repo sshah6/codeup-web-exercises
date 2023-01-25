@@ -9,6 +9,7 @@ let map = new mapboxgl.Map({
 })
 makeMarker(-98.5234, 29.5349)
 
+
 //Geocode utilities
 function geocode(search, token) {
   var baseUrl = 'https://api.mapbox.com'
