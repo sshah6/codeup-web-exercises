@@ -64,7 +64,7 @@ const icons = {
       </svg>`,
 }
 
-// ===============> WeatherMap API initializes and populating them to HTML
+// =================> WeatherMap API initializes and populating them to HTML
 function loadWeather(lon, lat) {
   $.get('https://api.openweathermap.org/data/2.5/forecast', {
     lon: lon,
@@ -73,7 +73,7 @@ function loadWeather(lon, lat) {
     units: 'imperial',
   })
     .done(function (data) {
-      let html = ''
+      let html = '';
       for (let i = 0; i < data.list.length; i += 8) {
         html += `
             <div class="col-xl-2 col-lg-3 col-md-3 col-xs-6 d-flex jsutify-content-between flex-md-wrap mb-4">
