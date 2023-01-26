@@ -85,7 +85,7 @@ const users = [
 
   for (let element of developers){
     // TODO: rewrite the assignment below to use template strings
-    list += `<li> ####I did this one#### ${element} </li>`;
+    list += `<li> ${element} </li>`;
     }
     list += `</ul>`;
 
