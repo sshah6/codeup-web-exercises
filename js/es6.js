@@ -72,7 +72,7 @@ const users = [
     // TODO: rewrite the assignment below to use template strings
     // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
 
-    developers.push(`${name}'s email is ${email} ${name} knows ${languages.join(',')}`);
+    developers.push(`${name}'s email is ${email}. ${name} knows ${languages.join(', ')}`);
     
   });
   // console.log(developers);
