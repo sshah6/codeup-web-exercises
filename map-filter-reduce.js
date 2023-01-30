@@ -38,7 +38,7 @@ const users = [
 
 //(1)
 const userMoreThan3Langs = users.filter((user)=>{
-return user.languages.length > 3;
+return user.languages.length >= 3;
 });
 // console.log(userMoreThan3Langs);
 
@@ -50,32 +50,34 @@ const usersEmail = users.map((user) =>{
 
 //(3)
 const averageExp = users.reduce((prev, curr)=>{
-    return prev + curr.yearsOfExperience / users.length;   
+    return prev + curr.yearsOfExperience / users.length; 
 },0);
 // console.log(averageExp);
 
 //(4)
 
-const longestEmail = usersEmail.reduce((prev, curr)=>{   
-    return prev.length>= curr.length ? prev : curr;   
-});   
-// console.log(longestEmail);
+// const longestEmail = usersEmail.reduce((prev, curr)=>{   
+//     return prev.length>= curr.length ? prev : curr;   
+// });   
+
+const longestEmail = users.reduce((longEmail, user) =>{
+    if(user.email.length > longEmail.length){
+        longEmail = user.email;
+    }
+    return longEmail;
+}, '');
+console.log(longestEmail);
 
 //(5)
-
-const listOfInstructors = users.reduce((prev, curr, i)=>{
-    if(i === users.length - 1){
-        return `.`;
-    }else{
-        return `${prev}, ${curr.name}`;      
-    }      
-}, `Your instructor are: ` );
-
-console.log(listOfInstructors);
+const userNames = users.reduce((str, user)=>{
+    str += user.name + ', ';
+    return str;
+},'Your instructors are: ').slice(0, -2) + '.';
+// console.log(userNames);
 
 //(6 BONUS)
 
-const uniqueLangs = users.reduce((prev, curr, i)=>{
-    return curr.languages;
-});
+// const uniqueLangs = users.reduce((prev, curr, i)=>{
+//     return curr.languages;
+// });
 // console.log(uniqueLangs);
